@@ -15,4 +15,9 @@ public class AoC21Utils
     {
         return content.Split("\n").ToList();
     }
+
+    public static List<int> TransformStringInputToInts(List<string> input)
+    {
+        return input.Select(int.Parse).ToList();
+    }
 }
