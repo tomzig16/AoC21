@@ -9,12 +9,27 @@ public class AoC21Utils
     public static string ReadFile(string fileName)
     {
         string projectPath = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
-        return System.IO.File.ReadAllText(projectPath + fileName).Trim();
+        return System.IO.File.ReadAllText(Path.Combine(projectPath, fileName)).Trim();
+    }
+
+    public static string ReadInputFile()
+    {
+        return ReadFile("./input.txt");
     }
 
     public static List<string> SplitStringByNewLines(string content)
     {
         return content.Split("\n").ToList();
+    }
+
+    public static List<string> ReadAndSplitByNewLine(string filename)
+    {
+        return SplitStringByNewLines(ReadFile(filename));
+    }
+    
+    public static List<string> ReadAndSplitByNewLine()
+    {
+        return SplitStringByNewLines(ReadInputFile());
     }
 
     public static List<int> TransformStringInputToInts(List<string> input)
