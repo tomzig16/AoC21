@@ -37,6 +37,11 @@ public class AoC21Utils
         return input.Select(int.Parse).ToList();
     }
 
+    public static List<ushort> TransformStringInputToUshorts(List<string> input)
+    {
+        return input.Select(ushort.Parse).ToList();
+    }
+    
     public static void PrintResult(string result)
     {
         Console.WriteLine($"(Part {partCounter}): {result}");
